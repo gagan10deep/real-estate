@@ -8,13 +8,11 @@ import {
 } from "../redux/user/userSlice";
 import OAuth from "../components/OAuth";
 
-export default function Signin() {
+export default function SignIn() {
   const [formData, setFormData] = useState({});
   const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -34,7 +32,7 @@ export default function Signin() {
       });
       const data = await res.json();
       console.log(data);
-      if (data.success === false) {
+      if (data.succes === false) {
         dispatch(signInFailure(data.message));
         return;
       }

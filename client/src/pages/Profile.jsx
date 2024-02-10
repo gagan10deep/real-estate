@@ -29,21 +29,25 @@ export default function Profile() {
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
   const dispatch = useDispatch();
+
   // firebase storage
   // allow read;
   // allow write: if
   // request.resource.size < 2 * 1024 * 1024 &&
   // request.resource.contentType.matches('image/.*')
+
   useEffect(() => {
     if (file) {
       handleFileUpload(file);
     }
   }, [file]);
+
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
     const fileName = new Date().getTime() + file.name;
     const storageRef = ref(storage, fileName);
     const uploadTask = uploadBytesResumable(storageRef, file);
+
     uploadTask.on(
       "state_changed",
       (snapshot) => {
@@ -61,9 +65,11 @@ export default function Profile() {
       }
     );
   };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -80,12 +86,14 @@ export default function Profile() {
         dispatch(updateUserFailure(data.message));
         return;
       }
+
       dispatch(updateUserSuccess(data));
       setUpdateSuccess(true);
     } catch (error) {
       dispatch(updateUserFailure(error.message));
     }
   };
+
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
@@ -102,6 +110,7 @@ export default function Profile() {
       dispatch(deleteUserFailure(error.message));
     }
   };
+
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
@@ -116,6 +125,7 @@ export default function Profile() {
       dispatch(deleteUserFailure(data.message));
     }
   };
+
   const handleShowListings = async () => {
     try {
       setShowListingsError(false);
@@ -125,6 +135,7 @@ export default function Profile() {
         setShowListingsError(true);
         return;
       }
+
       setUserListings(data);
     } catch (error) {
       setShowListingsError(true);
@@ -133,7 +144,6 @@ export default function Profile() {
 
   const handleListingDelete = async (listingId) => {
     try {
-      console.log(listingId);
       const res = await fetch(`/api/listing/delete/${listingId}`, {
         method: "DELETE",
       });
@@ -227,6 +237,7 @@ export default function Profile() {
           Sign out
         </span>
       </div>
+
       <p className="text-red-700 mt-5">{error ? error : ""}</p>
       <p className="text-green-700 mt-5">
         {updateSuccess ? "User is updated successfully!" : ""}
