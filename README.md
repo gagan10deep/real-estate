@@ -1,4 +1,4 @@
-Real Estate App with features like of sign in, sign up, creating listing about porperty, pagination with filters
+<h1> Real Estate App with features like of sign in, sign up, creating listing about porperty, pagination with filters </h1>
 
 Below are some sample screen shot taken from site
 
