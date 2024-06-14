@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wayne Estate</title>
-</head>
-<body>
+
     <h1>Wayne Estate</h1>
     <p>Wayne Estate is a comprehensive property listing platform designed to simplify the process of listing and renting properties. Users can effortlessly add their property listings, manage their details, and connect with potential renters. With powerful search capabilities and user-friendly features, Wayne Estate ensures a seamless experience for all its users.</p>
 
@@ -57,8 +50,7 @@
         <li>Push to the Branch (<code>git push origin feature/AmazingFeature</code>)</li>
         <li>Open a Pull Request</li>
     </ol>
-</body>
-</html>
+
 
 
 
