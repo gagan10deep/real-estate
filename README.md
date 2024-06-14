@@ -1,6 +1,6 @@
 
-  <h1>Wayne Estate</h1>
-  <p>Wayne Estate is a comprehensive property listing platform designed to simplify the process of listing and renting properties. Users can effortlessly add their property listings, manage their details, and connect with potential renters. With powerful search capabilities and user-friendly features, Wayne Estate ensures a seamless experience for all its users.</p>
+  <h1>Real Estate</h1>
+  <p>Real Estate is a comprehensive property listing platform designed to simplify the process of listing and renting properties. Users can effortlessly add their property listings, manage their details, and connect with potential renters. With powerful search capabilities and user-friendly features, Real Estate ensures a seamless experience for all its users.</p>
 
   <h2>Features</h2>
   <ul>
@@ -23,13 +23,13 @@
   <h3>Installation</h3>
   <ol>
       <li>Clone the repo
-          <pre><code>git clone https://github.com/your_username/wayne-estate.git</code></pre>
+          <pre><code>git clone https://github.com/your_username/real-estate.git</code></pre>
       </li>
       <li>Install NPM packages
           <pre><code>npm install</code></pre>
       </li>
       <li>Start the development server
-          <pre><code>npm start</code></pre>
+          <pre><code>npm run dev</code></pre>
       </li>
   </ol>
 
