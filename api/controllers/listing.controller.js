@@ -19,7 +19,7 @@ export const deleteListing = async (req, res, next) => {
   }
 
   if (req.user.id !== listing.userRef) {
-    return next(errorHandler(401, "You can only delete your own listings!"));
+    return next(errorHandler(401, "You can only delete your own listings!")); // For authorization
   }
 
   try {
@@ -100,7 +100,7 @@ export const getListings = async (req, res, next) => {
     const order = req.query.order || "desc";
 
     const listings = await Listing.find({
-      name: { $regex: searchTerm, $options: "i" },
+      name: { $regex: searchTerm, $options: "i" },  // $options: 'i' means lowercase
       offer,
       furnished,
       parking,
